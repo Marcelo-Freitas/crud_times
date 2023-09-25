@@ -9,4 +9,4 @@ define("DB_PASSWORD", "");
 //Constante com a URL do sistema
 // PC SOSTER -> "TrabalhoMVC/crud_times"
 // PC MARCELO -> "/crud_times"
-define("BASE_URL", "TrabalhoMVC/crud_times");
+define("BASE_URL", "/TrabalhoMVC/crud_times");

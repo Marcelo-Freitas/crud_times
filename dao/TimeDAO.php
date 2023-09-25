@@ -49,7 +49,7 @@ class TimeDAO {
 
     public function list() {
         $sql = "SELECT t.*," . 
-                " e.nome AS nome_estado, e.sigla AS sigla_estado" .
+                " e.nome AS nome_estado, e.sigla AS sigla_estado," .
                 " ca.nome AS nome_campeonato, ca.premiacao AS campeonato_premiacao" . 
                 " FROM times t" .
                 " JOIN estados e ON (e.id = t.id_estado)" .
@@ -65,7 +65,7 @@ class TimeDAO {
         $conn = Connection::getConnection();
 
         $sql = "SELECT t.*," . 
-                " e.nome AS nome_estado, e.sigla AS sigla_estado" . 
+                " e.nome AS nome_estado, e.sigla AS sigla_estado," . 
                 " ca.nome AS nome_campeonato, ca.premiacao AS campeonato_premiacao" . 
                 " FROM times t" .
                 " JOIN estados e ON (e.id = t.id_estado)" .
@@ -102,7 +102,7 @@ class TimeDAO {
             $campeonato = new Campeonato();
             $campeonato->setId($reg['id_curso'])
                 ->setNome($reg['nome'])
-                ->setPremiacao($reg['turno_curso']);            
+                ->setPremiacao($reg['premiacao']);            
             $time->setCampeonato($campeonato);
 
             array_push($times, $time);

@@ -1,5 +1,5 @@
 <?php 
-require __DIR__.'/../dao/CampeonatoDAO.php';
+require_once __DIR__.'/../dao/CampeonatoDAO.php';
 
 class CampeonatoController
 {

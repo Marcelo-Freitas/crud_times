@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__.'/../model/Time.php';
+require_once __DIR__.'/../model/Time.php';
 
 class TimeService
 {

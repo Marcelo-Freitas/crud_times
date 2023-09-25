@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__.'/../dao/EstadoDAO.php';
+require_once __DIR__.'/../dao/EstadoDAO.php';
 
 class EstadoController {
 

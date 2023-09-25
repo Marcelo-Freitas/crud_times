@@ -1,6 +1,6 @@
 <?php 
-require __DIR__.'/Campeonato.php';
-require __DIR__.'/Estado.php';
+require_once __DIR__.'/Campeonato.php';
+require_once __DIR__.'/Estado.php';
 
 class Time
 {
