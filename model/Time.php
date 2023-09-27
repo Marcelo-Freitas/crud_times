@@ -11,7 +11,12 @@ class Time
     private ?Estado $estado;
     private ?Campeonato $campeonato;
 
-    
+    public function __construct()
+    {
+        $this->id = 0;
+        $this->campeonato = null;
+        $this->estado = null;
+    }
 
     /**
      * Get the value of id

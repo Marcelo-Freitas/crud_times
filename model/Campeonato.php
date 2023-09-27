@@ -7,7 +7,7 @@ class Campeonato {
 
     public function __toString() {
         return $this->nome . 
-            " (" . $this->id . ")"; 
+            " (" . $this->premiacao . ")"; 
     }
 
     /**

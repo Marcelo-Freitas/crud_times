@@ -1,5 +1,5 @@
 <?php 
-require __DIR__.'/../../util/config.php';
+require_once __DIR__.'/../../util/config.php';
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-success">

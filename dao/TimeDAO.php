@@ -32,11 +32,9 @@ class TimeDAO {
             " ano_fundacao = ?, id_estado = ?, id_campeonato = ?".
             " WHERE id = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->execute([$time->getNome(), 
-                        $time->getClassificacao(), 
-                        $time->getAnoFundacacao(),
-                        $time->getEstado()->getId(),
-                        $time->getCampeonato()->getId()]);
+        $stmt->execute([$time->getNome(), $time->getClassificacao(), 
+                        $time->getAnoFundacacao(), $time->getEstado()->getId(),
+                        $time->getCampeonato()->getId(), $time->getId()]);
     }
 
     public function deleteById(int $id) {
@@ -100,10 +98,16 @@ class TimeDAO {
                 ->setAnoFundacacao($reg['ano_fundacao']);
 
             $campeonato = new Campeonato();
-            $campeonato->setId($reg['id_curso'])
-                ->setNome($reg['nome'])
-                ->setPremiacao($reg['premiacao']);            
+            $campeonato->setId($reg['id_campeonato'])
+                ->setNome($reg['nome_campeonato'])
+                ->setPremiacao($reg['campeonato_premiacao']);            
             $time->setCampeonato($campeonato);
+
+            $estado = new Estado();
+            $estado->setId($reg['id_estado'])
+                ->setNome($reg['nome_estado'])
+                ->setSigla($reg['sigla_estado']);            
+            $time->setEstado($estado);
 
             array_push($times, $time);
         }

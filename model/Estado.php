@@ -3,10 +3,14 @@
 class Estado
 {
     private ?int $id;
-    private ?int $nome;
-    private ?int $sigla;
+    private ?string $nome;
+    private ?string $sigla;
 
 
+    public function __toString() {
+        return $this->nome . 
+            " (" . $this->sigla . ")"; 
+    }
     /**
      * Get the value of id
      */ 
