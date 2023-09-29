@@ -83,12 +83,20 @@ $campeonatos = $campCont->listar();
 
                     <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit"><?php echo (!$time || $time->getId() <= 0 ? 'Registrar' : 'Alterar') ?></button>
                     <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="reset">Limpar</button>
-                    <small class="text-muted">By clicking <?php echo (!$time || $time->getId() <= 0 ? 'Registrar' : 'Alterar') ?>, you agree to the terms of use.</small>
+                    <small class="text-muted">Clicando em <?php echo (!$time || $time->getId() <= 0 ? 'Registrar' : 'Alterar') ?>, você cadastra o time no nosso sistema.</small>
                     <hr class="my-4">
                 </form>
-                <div class="alert alert-danger" role="alert">
+                <!-- <div class="alert alert-danger" role="alert">
                     <?= $msgErro; ?>
-                </div>
+                </div> -->
+                <?php
+                if (isset($msgErro) && !empty($msgErro)) {
+                    echo '<div class="alert alert-danger" role="alert">';
+                    echo $msgErro;
+                    echo '</div>';
+                }
+                ?>
+
                 <br>
 
                 <a href="listar.php">Voltar</a>
