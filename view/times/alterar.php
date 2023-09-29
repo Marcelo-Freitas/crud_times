@@ -17,10 +17,12 @@ if(isset($_POST['submetido'])) {
     $anoFundacao = is_numeric($_POST['ano']) ? $_POST['ano'] : null;
     $idEstado = is_numeric($_POST['estado']) ? $_POST['estado'] : null;
     $idCampeonato = is_numeric($_POST['camp']) ? $_POST['camp'] : null;
+    $idTime = is_numeric($_POST['id']) ? $_POST['id'] : null;
     
     //Criar um objeto time para persistência
     $time = new Time();
     $time->setNome($nome);
+    $time->setId($idTime);
     $time->setClassificacao($classificacao);
     $time->setAnoFundacacao($anoFundacao);
     if($idEstado) {

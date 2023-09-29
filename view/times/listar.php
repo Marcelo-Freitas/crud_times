@@ -14,46 +14,50 @@ $times = $timeCont->listar();
 require(__DIR__ . "/../include/header.php");
 ?>
 
-<h2>Listagem de times</h2>
+<div class="container table-responsive">
+    <h2 class="my-4">Listagem de times</h2>
+    <br>
 
-<div>
-    <a class="btn btn-success" href="inserir.php">Inserir</a>
-</div>
-<br>
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Ano de fundação</th>
-            <th>Estado</th>
-            <th>Campeonato</th>
-            <th>Classificação</th>
-            <th></th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach($times as $t): ?>
+    <table class="table table-striped table-bordered rounded-3">
+        <thead class="thead-dark">
             <tr>
-                <td><?= $t->getNome(); ?></td>
-                <td><?= $t->getAnoFundacacao(); ?></td>
-                <td><?= $t->getEstado(); ?></td>
-                <td><?= $t->getCampeonato(); ?></td>
-                <td><?= $t->getClassificacao(); ?></td>
-                <td><a href="alterar.php?idTime=<?= $t->getId() ?>"> 
-                        <img src="../../img/btn_editar.png" /> 
-                    </a>
-                </td>
-                <td><a href="excluir.php?idTime=<?= $t->getId() ?>"
-                    onclick="return confirm('Confirma a exclusão')"> 
-                        <img src="../../img/btn_excluir.png" /> 
-                    </a>
-                </td>
+                <th>Nome</th>
+                <th>Ano de fundação</th>
+                <th>Estado</th>
+                <th>Campeonato</th>
+                <th>Classificação</th>
+                <th style="color: gold;">Alterar</th>
+                <th style="color: red;">Excluir</th>
             </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            <?php foreach($times as $t): ?>
+                <tr>
+                    <td><?= $t->getNome(); ?></td>
+                    <td><?= $t->getAnoFundacacao(); ?></td>
+                    <td><?= $t->getEstado(); ?></td>
+                    <td><?= $t->getCampeonato(); ?></td>
+                    <td><?= $t->getClassificacao(); ?></td>
+                    <td><a href="alterar.php?idTime=<?= $t->getId() ?>"> 
+                            <img src="../../img/btn_editar.png" /> 
+                        </a>
+                    </td>
+                    <td><a href="excluir.php?idTime=<?= $t->getId() ?>"
+                        onclick="return confirm('Confirma a exclusão')"> 
+                            <img src="../../img/btn_excluir.png" /> 
+                        </a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+    <br>
+
+    <div>
+        <a class="btn btn-dark btn-outline-warning" href="inserir.php">Inserir</a>
+    </div>
+    <br>
+</div>
 
 
 <?php 

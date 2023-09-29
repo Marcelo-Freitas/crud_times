@@ -19,6 +19,30 @@ require_once __DIR__ . '/util/config.php';
         </div>
     </div>
 </div>
+<br><br>
+
+<div class="container text-center">
+    <div class="row align-items-center">
+        <div class="col-2">
+            <img src="img/flamengo.jpg" style="max-width: 40%; max-height: 40%;">
+        </div>
+        <div class="col-2">
+            <img src="img/palmeiras.png" style="max-width: 40%; max-height: 40%;">
+        </div>
+        <div class="col-2">
+            <img src="img/atletico.png" style="max-width: 40%; max-height: 40%;">
+        </div>
+        <div class="col-2">
+            <img src="img/gremio.png" style="max-width: 40%; max-height: 40%;">
+        </div>
+        <div class="col-2">
+            <img src="img/atletico pr.png" style="max-width: 40%; max-height: 40%;">
+        </div>
+        <div class="col-2">
+            <img src="img/santos.png" style="max-width: 40%; max-height: 40%;">
+        </div>
+    </div>
+</div>
 
 <?php
 include_once __DIR__ . '/view/include/footer.php';
