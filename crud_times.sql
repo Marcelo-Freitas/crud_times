@@ -1,25 +1,25 @@
-CREATE TABLE campeonatos ( 
-  id int AUTO_INCREMENT NOT NULL, 
-  nome varchar(70) NOT NULL,
-  premiacao int NOT NULL,
-  CONSTRAINT pk_campeonatos PRIMARY KEY (id) 
+CREATE TABLE campeonatos (
+                             id int AUTO_INCREMENT NOT NULL,
+                             nome varchar(70) NOT NULL,
+                             premiacao int NOT NULL,
+                             CONSTRAINT pk_campeonatos PRIMARY KEY (id)
 );
 
 CREATE TABLE times (
-  id int AUTO_INCREMENT NOT NULL, 
-  nome varchar(70) NOT NULL, 
-  classificacao integer NOT NULL, 
-  ano_fundacao int NOT NULL,
-  id_estado int NOT NULL, 
-  id_campeonato int NOT NULL, 
-  CONSTRAINT pk_times PRIMARY KEY (id)
+                       id int AUTO_INCREMENT NOT NULL,
+                       nome varchar(70) NOT NULL,
+                       classificacao integer NOT NULL,
+                       ano_fundacao int NOT NULL,
+                       id_estado int NOT NULL,
+                       id_campeonato int NOT NULL,
+                       CONSTRAINT pk_times PRIMARY KEY (id)
 );
 
 CREATE TABLE estados (
-  id int AUTO_INCREMENT NOT NULL, 
-  nome varchar(70) NOT NULL, 
-  sigla varchar(2) NOT NULL,
-  CONSTRAINT pk_estados PRIMARY KEY (id)
+                         id int AUTO_INCREMENT NOT NULL,
+                         nome varchar(70) NOT NULL,
+                         sigla varchar(2) NOT NULL,
+                         CONSTRAINT pk_estados PRIMARY KEY (id)
 );
 
 ALTER TABLE times ADD CONSTRAINT fk_campeonatos FOREIGN KEY (id_campeonato) REFERENCES campeonatos (id);
