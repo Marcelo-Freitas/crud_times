@@ -1,4 +1,4 @@
-<?php
+<?php 
 require_once(__DIR__ . "/../../controller/TimeController.php");
 require_once(__DIR__ . "/../../model/Time.php");
 require_once(__DIR__ . "/../../model/Estado.php");
@@ -18,7 +18,7 @@ if(isset($_POST['submetido'])) {
     $idEstado = is_numeric($_POST['estado']) ? $_POST['estado'] : null;
     $idCampeonato = is_numeric($_POST['camp']) ? $_POST['camp'] : null;
     $idTime = is_numeric($_POST['id']) ? $_POST['id'] : null;
-
+    
     //Criar um objeto time para persistência
     $time = new Time();
     $time->setNome($nome);

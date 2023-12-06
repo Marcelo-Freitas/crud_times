@@ -17,19 +17,19 @@ $nomeUsuario = $loginCont->getNomeUsuario();
                     <li>
                         <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="<?= BASE_URL ?>/view/times/listar.php">
                             <span class="d-inline-block bg-success rounded-circle p-1"></span>
-                            Times
-                        </a>
+                        Times
+                        </a>    
                     </li>
                     <li>
                         <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
                             <span class="d-inline-block bg-danger rounded-circle p-1"></span>
-                            Campeonatos
+                        Campeonatos
                         </a>
                     </li>
                     <li>
                         <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
                             <span class="d-inline-block bg-primary rounded-circle p-1"></span>
-                            Premiações
+                        Premiações
                         </a>
                     </li>
                 </ul>
@@ -39,8 +39,8 @@ $nomeUsuario = $loginCont->getNomeUsuario();
                 <li>
                     <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="<?= BASE_URL ?>/view/login/sair.php">
                         <span class="d-inline-block bg-success"></span>
-                        Sair
-                    </a>
+                    Sair
+                    </a>    
                 </li>
             </ul>
         </ul>

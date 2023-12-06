@@ -1,13 +1,28 @@
 <?php 
 
-class Campeonato {
+class Campeonato implements JsonSerializable {
     private ?int $id;
     private ?string $nome;
     private ?int $premiacao;
 
+    private ?Estado $estado;
+
+    public function __construct($id=0) {
+        $this->id = $id;
+        $this->estado = null;
+    }
+
     public function __toString() {
         return $this->nome . 
-            " (" . $this->premiacao . ")"; 
+            " (R$" . $this->premiacao . "M)"; 
+    }
+
+    public function jsonSerialize(): array {
+        $dados = array("id" => $this->id,
+            "nome" => $this->nome,
+            "premiacao" => $this->premiacao,
+            "estado" => $this->id);
+        return $dados;
     }
 
     /**
@@ -69,4 +84,15 @@ class Campeonato {
 
         return $this;
     }
+
+    public function getEstado(): ?Estado
+    {
+        return $this->estado;
+    }
+
+    public function setEstado(?Estado $estado): void
+    {
+        $this->estado = $estado;
+    }
+
 }

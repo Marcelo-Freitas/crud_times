@@ -11,13 +11,15 @@ class CampoenatoDAO {
         $this->conn = Connection::getConnection();
     }
 
-    public function list() {
-        $sql = "SELECT * FROM campeonatos";
+    public function list(int $id_estado) {
+        $sql = "SELECT * FROM campeonatos WHERE id_estado = :id_estado";
         $stm = $this->conn->prepare($sql);
+        $stm->bindParam(':id_estado', $id_estado, PDO::PARAM_INT);
         $stm->execute();
         $result = $stm->fetchAll();
         return $this->mapBancoParaObjeto($result);
     }
+
 
     private function mapBancoParaObjeto($result) {
         $campeonato = array();

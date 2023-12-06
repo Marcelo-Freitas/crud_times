@@ -1,4 +1,4 @@
-<?php
+<?php 
 //Serviço para login
 
 require_once(__DIR__ . "/../model/Usuario.php");
@@ -20,9 +20,9 @@ class LoginService {
 
     public function SalvarUsuarioSessao(Usuario $usuario) {
         session_start();
-
-        $_SESSION['USU_ID'] = $usuario->getId();
-        $_SESSION['USU_NOME'] = $usuario->getNome();
+        
+        $_SESSION['USU_ID'] = $usuario->getId(); 
+        $_SESSION['USU_NOME'] = $usuario->getNome(); 
 
     }
 
@@ -30,7 +30,7 @@ class LoginService {
         if (session_status() != PHP_SESSION_ACTIVE) {
             session_start();
         }
-
+        
 
         if(isset($_SESSION['USU_NOME']))
             return $_SESSION['USU_NOME'];

@@ -1,4 +1,4 @@
-<?php
+<?php 
 //Página com o formulário de login
 
 require_once(__DIR__ . "/../../controller/LoginController.php");
@@ -30,7 +30,7 @@ if(isset($_POST['submetido'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -40,7 +40,7 @@ if(isset($_POST['submetido'])) {
     <title>Crud Alunos</title>
 </head>
 <body>
-<section class="vh-100">
+<section class="vh-100 container">
     <div class="container-fluid h-custom">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-md-9 col-lg-6 col-xl-5">
@@ -105,7 +105,7 @@ if(isset($_POST['submetido'])) {
         </div>
     </div>
     <div
-        class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-dark">
+            class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-dark">
         <!-- Copyright -->
         <div class="text-white mb-3 mb-md-0">
             Copyright © 2023. Marcelo Amador e Rafael Soster.

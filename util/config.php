@@ -7,6 +7,6 @@ define("DB_USER", "root");
 define("DB_PASSWORD", "");
 
 //Constante com a URL do sistema
-// PC SOSTER -> "TrabalhoMVC/crud_times"
-// PC MARCELO -> "/crud_times"
-define("BASE_URL", "/WEB/crud_times");
+// PC SOSTER -> "/TrabalhoMVC/crud_times"
+// PC MARCELO -> "/WEB/crud_times"
+define("BASE_URL", "/TrabalhoMVC/crud_times");

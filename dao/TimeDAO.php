@@ -7,7 +7,7 @@ require_once(__DIR__ . "/../model/Estado.php");
 
 class TimeDAO {
 
-    private $conn;
+    private $conn; 
 
     public function __construct() {
         $this->conn = Connection::getConnection();

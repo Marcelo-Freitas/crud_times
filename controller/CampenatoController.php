@@ -9,7 +9,7 @@ class CampeonatoController
         $this->campeonatoDAO = new CampoenatoDAO();
     }
 
-    public function listar() {
-        return $this->campeonatoDAO->list();
+    public function listar(int $id_estado) {
+        return $this->campeonatoDAO->list($id_estado);
     }
 }

@@ -18,7 +18,7 @@ class Usuario {
 
     /**
      * Get the value of id
-     */
+     */ 
     public function getId()
     {
         return $this->id;
@@ -28,7 +28,7 @@ class Usuario {
      * Set the value of id
      *
      * @return  self
-     */
+     */ 
     public function setId($id)
     {
         $this->id = $id;
@@ -38,7 +38,7 @@ class Usuario {
 
     /**
      * Get the value of nome
-     */
+     */ 
     public function getNome()
     {
         return $this->nome;
@@ -48,7 +48,7 @@ class Usuario {
      * Set the value of nome
      *
      * @return  self
-     */
+     */ 
     public function setNome($nome)
     {
         $this->nome = $nome;
@@ -58,7 +58,7 @@ class Usuario {
 
     /**
      * Get the value of login
-     */
+     */ 
     public function getLogin()
     {
         return $this->login;
@@ -68,7 +68,7 @@ class Usuario {
      * Set the value of login
      *
      * @return  self
-     */
+     */ 
     public function setLogin($login)
     {
         $this->login = $login;
@@ -78,7 +78,7 @@ class Usuario {
 
     /**
      * Get the value of senha
-     */
+     */ 
     public function getSenha()
     {
         return $this->senha;
@@ -88,7 +88,7 @@ class Usuario {
      * Set the value of senha
      *
      * @return  self
-     */
+     */ 
     public function setSenha($senha)
     {
         $this->senha = $senha;
