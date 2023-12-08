@@ -16,6 +16,7 @@ class Time
         $this->id = 0;
         $this->campeonato = null;
         $this->estado = null;
+        $this->classificacao = null;
     }
 
     /**

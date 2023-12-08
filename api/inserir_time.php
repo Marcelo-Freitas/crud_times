@@ -15,15 +15,21 @@ $time = new Time();
 //Sets dos valores de time
 $time->setNome($nome);
 $time->setAnoFundacacao($anoFundacao);
+$time->setClassificacao($classificacao);
 if($idCampeonato) {
     $camp = new Campeonato();
     $camp->setId($idCampeonato);
     $time->setCampeonato($camp);
 }
+if($idEstado) {
+    $estado = new Estado();
+    $estado->setId($idEstado);
+    $time->setEstado($estado);
+}
 
 //Chamar o controller para salvar a turma
 $timeCont = new TimeController();
-$erros = $timeCont->salvar($time);
+$erros = $timeCont->inserir($time);
 
 //Retornar os erros ou uma string vazia se não houverem erros
 $msgErro = "";

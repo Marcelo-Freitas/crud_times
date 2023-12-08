@@ -65,10 +65,19 @@ $campCont = new CampeonatoController();
                     </div>
 
                     <input type="hidden" id="hddBaseUrl" value="<?= BASE_URL ?>" />
-                    <input type="hidden" name="id" value="<?php echo ($time ? $time->getId() : 0); ?>" />
+                    <input type="hidden" name="id" id="idTime" value="<?php echo ($time ? $time->getId() : 0); ?>" />
                     <input type="hidden" name="submetido" value="1" />
 
-                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit"><?php echo (!$time || $time->getId() <= 0 ? 'Registrar' : 'Alterar') ?></button>
+<!--                    <button type="button" class="btn btn-success"-->
+<!--                            onclick="inserirTime();">-->
+<!--                        Gravar AJAX</button>-->
+<!--                    <button type="button" class="btn btn-success"-->
+<!--                            onclick="--><?php //echo (!$time || $time->getId() <= 0 ? 'inseriTime();' : 'alterarTime();') ?><!--">-->
+<!--                        Alterar AJAX</button>-->
+
+                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type=""
+                            onclick="<?php echo (!$time || $time->getId() <= 0 ? 'inseriTime();' : 'alterarTime();') ?>"
+                    ><?php echo (!$time || $time->getId() <= 0 ? 'Registrar' : 'Alterar') ?></button>
                     <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="reset">Limpar</button>
                     <small class="text-muted">Clicando em <?php echo (!$time || $time->getId() <= 0 ? 'Registrar' : 'Alterar') ?>, você cadastra o time no nosso sistema.</small>
                     <hr class="my-4">
@@ -82,7 +91,10 @@ $campCont = new CampeonatoController();
                 }
                 ?>
                 <br>
+                <div id="divMsgErro" class="alert alert-danger" style="display: none;">
 
+                </div>
+                <br>
                 <a href="listar.php">Voltar</a>
 
             </div>

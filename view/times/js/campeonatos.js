@@ -4,6 +4,8 @@ const inputNome = document.getElementById('txtNome');
 const inputAno = document.getElementById('numAno');
 const inputEstado = document.getElementById('selEstado');
 const inputCampeonato = document.getElementById('selCampeonato');
+const inputClassificacao = document.getElementById('numClass');
+const inputIdTime = document.getElementById('idTime');
 
 const divErros = document.getElementById('divMsgErro');
 
@@ -60,18 +62,53 @@ function criarOptionCampeonato(desc, valor, valorSelecionado) {
     inputCampeonato.appendChild(option);
 }
 
-function inserirTurma() {
+function inserirTime() {
     //Estrutura FormData para enviar os parâmetros
     //no corpo da requisição do tipo POST
     var dados = new FormData();
+    dados.append("nome", inputNome.value);
     dados.append("ano", inputAno.value);
-    dados.append("idCurso", inputEstado.value);
-    dados.append("idDisc", inputCampeonato.value);
+    dados.append("idEstado", inputEstado.value);
+    dados.append("idCampeonato", inputCampeonato.value);
+    dados.append("classificacao", inputClassificacao.value);
+
+    //console.log(inputNome.value+" "+inputAno.value+" "+inputEstado.value+" "+inputCampeonato.value+" "+inputClassificacao.value)
 
     //Requisição
     var xhttp = new XMLHttpRequest();
 
-    var url = baseUrl + "/api/inserir_turma.php";
+    var url = baseUrl + "/api/inserir_time.php";
+
+    xhttp.open("POST", url);
+    xhttp.onload = function() {
+        var resposta = xhttp.responseText;
+        //console.log(resposta);
+
+        if(resposta) {
+            divErros.innerHTML = resposta;
+            divErros.style.display = "block";
+        } else {
+            //Redirecionar para a listagem
+            window.location = "listar.php";
+        }
+    }
+    xhttp.send(dados);
+}
+
+function alterarTime() {
+    var dados = new FormData();
+    dados.append("nome", inputNome.value);
+    dados.append("ano", inputAno.value);
+    dados.append("idEstado", inputEstado.value);
+    dados.append("idCampeonato", inputCampeonato.value);
+    dados.append("classificacao", inputClassificacao.value);
+    dados.append("id", inputIdTime.value);
+
+    //console.log(inputNome.value+" "+inputAno.value+" "+inputEstado.value+" "+inputCampeonato.value+" "+inputClassificacao.value+" "+inputIdTime.value);
+
+    var xhttp = new XMLHttpRequest();
+
+    var url = baseUrl + "/api/alterar_time.php";
 
     xhttp.open("POST", url);
     xhttp.onload = function() {
